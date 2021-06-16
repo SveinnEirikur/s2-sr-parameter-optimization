@@ -35,7 +35,6 @@ hyperopt==0.2.5
 matlab==0.1
 pandas==1.2.4
 Pillow==8.2.0
-skimage==0.0
 tensorflow==2.5.0
 ```
 
