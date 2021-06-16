@@ -30,7 +30,7 @@ tqdm==4.51.0
 numpy==1.18.5
 matplotlib==3.3.3
 h5py==2.10.0
-tensorflow_gpu==2.3.1
+tensorflow_gpu==2.4.2
 hyperopt==0.2.5
 matlab==0.1
 pandas==1.2.4
