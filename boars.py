@@ -28,6 +28,7 @@ np.random.seed(seed)
 rnd.seed(seed)
 os.environ['PYTHONHASHSEED']=str(seed)
 
+# Paramters that have already been found
 best_pars = {
     "apex": {
         "ATPRK": {
@@ -501,10 +502,11 @@ best_pars = {
     }
 }
 
-
+# Lists of installed methods and datasets
 meth_list = ['S2sharp', 'SSC'] #['ATPRK', 'DSen2', 'MuSA', 'S2sharp', 'SSC', 'SSSS', 'SupReME']
 data_list = ['rkvik', 'escondido']#['apex', 'aviris', 'crops', 'coast', 'coastal', 'mountain', 'rkvik', 'escondido', 'urban']
 
+# Objective function to evaluate
 def objective_func(method, train_params, types, mYim_2, mYim_6, Xm_im, metric, limsub=6,
                    mtf=[ .32, .26, .28, .24, .38, .34, .34, .26, .33, .26, .22, .23],
                    d=[6,1,1,1,2,2,2,1,2,6,2,2], eval_bands=[2,6], matlab_func = True, verbose=False,
@@ -583,7 +585,7 @@ def objective_func(method, train_params, types, mYim_2, mYim_6, Xm_im, metric, l
 
     return {'loss': opt_loss/len(idx), 'status': status}
 
-
+# Function to optimize parameters of single method
 def opt_method(method, parameters, max_evals, dataset='rkvik', datadir='./data/', metric='sre', eval_bands=[2,6], matlab_func = True, verbose=False, savefile='./results/'+time.strftime("%Y%m%d%H%M")):
 
     par_space = {}
@@ -630,16 +632,9 @@ def opt_method(method, parameters, max_evals, dataset='rkvik', datadir='./data/'
         print('best', metric, ':', np.nanmin(improvements))
     return pars
 
+# Helper functions
 
-def opt_all_datasets(max_evals=150, metrics=['sre'], datadir='./data/', datasets=data_list):
-    eng = matlab.engine.start_matlab()
-    savefile='./opt_result/rr_'+time.strftime("%Y%m%d%H%M")
-    for dataset in datasets:
-        for metric in metrics:
-            print(dataset + ': ' + metric,'\n')
-            opt_method(max_evals, dataset=dataset, datadir=datadir, metric=metric, savefile=savefile, eng=eng)
-    eng.quit
-
+# Trim results to improvements only
 def improvement_only(a, b):
     try:
         if np.nanmin([np.nanmin(a), b]) == np.nanmin(a):
@@ -649,13 +644,14 @@ def improvement_only(a, b):
     except ValueError:
         return a + [b]
 
+# Convert parameter dictionary to Matlab list for Matlab method wrappers
 def pardict_to_matlist(pardict, mat_types = {}):
     par_list = [(key, matlab.int16([value]) if mat_types.get(key, 'double')  is 'int' else matlab.double([value])) for key, value in pardict.items()]
     par_list = [item for subtuple in par_list for item in subtuple]
     return par_list
 
+# Get handle for method (and parameters)
 def get_method(meth_name, meth_path_prefix='./', matlab_handle=matlab.engine.start_matlab(), get_pars=False):
-
     if meth_name is 'ATPRK':
         matlab_handle.addpath(meth_path_prefix + meth_name)
         method = matlab_handle.ATPRKwrap
