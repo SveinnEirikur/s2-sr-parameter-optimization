@@ -2,6 +2,7 @@ import numpy as np
 import scipy.io as spio
 import h5py
 
+# Helper function to load Matlab cell arrays
 def load_matlab_cell_array(filepath, var_name, verbose=False):
     v = None
     try:
@@ -18,6 +19,7 @@ def load_matlab_cell_array(filepath, var_name, verbose=False):
         assert v is not None
         return v
 
+# Helper function to load Matlab arrays
 def load_matlab_array(filepath, var_name, verbose=False):
     v = None
     try:
@@ -35,6 +37,7 @@ def load_matlab_array(filepath, var_name, verbose=False):
         assert v is not None
         return v
 
+# Helper function to load S2 images from mat-files
 def get_data(dataset_name, datadir='../data/', verbose=False, rr=False, get_mtf=False):
     Yim = None
     eval_bands = [2,6]

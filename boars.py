@@ -1,8 +1,7 @@
-from tqdm import tqdm #_notebook as tqdm
+from tqdm import tqdm
 from scipy import io as spio
 import os
 import sys
-import numpy as np
 import numpy as np
 import random as rnd
 
@@ -43,7 +42,7 @@ best_pars = {
             "lam": 0.0005075231839284101,
             "mu": 0.21136587946368565
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 1.9341127858603557,
             "q1": 0.006073349262165454,
             "q10": 0.47647853130518464,
@@ -59,7 +58,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 63,
-            "lr": 0.0005153685695537464
+            "lr": 0.0005153685695537464,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 0.16738800822718586,
@@ -82,7 +82,7 @@ best_pars = {
             "lam": 18.58323542944518,
             "mu": 0.04384833806846039
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 15.602375101896984,
             "q1": 0.16189748106078408,
             "q10": 3.210142085847263,
@@ -117,7 +117,7 @@ best_pars = {
             "lam": 0.003070160927798489,
             "mu": 0.2677622798201873
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 61.06887402154388,
             "q1": 0.0017896762309261782,
             "q10": 0.5658297574376101,
@@ -133,7 +133,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 63,
-            "lr": 0.0005153685695537464
+            "lr": 0.0005153685695537464,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 354.1840305048178,
@@ -156,7 +157,7 @@ best_pars = {
             "lam": 4.525702694704195,
             "mu": 0.1089370068057253
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 13.992261791161758,
             "q1": 0.011301489582144816,
             "q10": 0.12476202310790242,
@@ -172,7 +173,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 17,
-            "lr": 0.0002464350897256471
+            "lr": 0.0002464350897256471,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 10.997244596883432,
@@ -196,7 +198,7 @@ best_pars = {
             "lam": 0.005,
             "mu": 0.6,
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 0.00018998,
             "q1": 1,
             "q10": 1,
@@ -214,13 +216,8 @@ best_pars = {
             "batch_size": 64,
             "lr": 0.0005,
             "ndown": 3,
-            "num_epochs": 500
-        },
-        "SSCnew": {
-            "batch_size": 64,
-            "lr": 0.0005,
-            "ndown": 3,
-            "num_epochs": 500
+            "num_epochs": 500,
+            "mtf_down": False
         },
         "SSSS": {
             "ksize": 13,
@@ -245,7 +242,7 @@ best_pars = {
             "lam": 6.749723141559358,
             "mu": 1.1232718690037486
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 2.5161416208114624,
             "q1": 0.15933231239414453,
             "q10": 0.3905405999585421,
@@ -261,7 +258,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 16,
-            "lr": 0.0006232930119819039
+            "lr": 0.0006232930119819039,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 3.6755574345202326,
@@ -284,7 +282,7 @@ best_pars = {
             "lam": 0.0006274677008391014,
             "mu": 0.02363444671432028
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 63.966522357122145,
             "q1": 0.05377734798309607,
             "q10": 3.4277403706757323,
@@ -300,7 +298,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 21,
-            "lr": 0.0004430836475802122
+            "lr": 0.0004430836475802122,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 0.1308087572047968,
@@ -323,7 +322,7 @@ best_pars = {
             "lam": 0.2815817835390236,
             "mu": 0.20680762741962738
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 1.6175102853916246,
             "q1": 0.00044542449399612676,
             "q10": 0.07491354626104034,
@@ -339,7 +338,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 53,
-            "lr": 0.0013452632885245465
+            "lr": 0.0013452632885245465,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 0.09389232450175844,
@@ -362,7 +362,7 @@ best_pars = {
             "lam": 66.83743856132301,
             "mu": 0.08911647178056135
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 1.4594340307449114,
             "q1": 0.00031478443572017546,
             "q10": 284.1445895177555,
@@ -378,7 +378,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 47,
-            "lr": 0.0005854814665428689
+            "lr": 0.0005854814665428689,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 20.064800454745807,
@@ -401,7 +402,7 @@ best_pars = {
             "lam": 0.514587104720504,
             "mu": 0.04244875639644929
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 4.5019455648670235,
             "q1": 0.002461808675174749,
             "q2": 0.016534706198494616,
@@ -416,7 +417,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 18,
-            "lr": 0.0006070133672749907
+            "lr": 0.0006070133672749907,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 7014907.554849592,
@@ -439,7 +441,7 @@ best_pars = {
             "lam": 1.8387602483563992,
             "mu": 0.0718138948489673
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 2.603050366741197,
             "q1": 0.00021861310683879556,
             "q10": 356.64630184004375,
@@ -474,7 +476,7 @@ best_pars = {
             "lam": 66.6423594393631,
             "mu": 0.21909754096434964
         },
-        "S2sharp": {
+        "S2Sharp": {
             "lam": 977.1951026420713,
             "q1": 0.0003150958539615096,
             "q10": 0.6745077320163843,
@@ -490,7 +492,8 @@ best_pars = {
         },
         "SSC": {
             "batch_size": 26,
-            "lr": 0.0014705228068054906
+            "lr": 0.0014705228068054906,
+            "mtf_down": True
         },
         "SSSS": {
             "lam": 0.831794922202297,
@@ -503,8 +506,8 @@ best_pars = {
 }
 
 # Lists of installed methods and datasets
-meth_list = ['S2sharp', 'SSC'] #['ATPRK', 'DSen2', 'MuSA', 'S2sharp', 'SSC', 'SSSS', 'SupReME']
-data_list = ['rkvik', 'escondido']#['apex', 'aviris', 'crops', 'coast', 'coastal', 'mountain', 'rkvik', 'escondido', 'urban']
+meth_list = ['S2Sharp', 'SSC'] #['ATPRK', 'DSen2', 'MuSA', 'S2Sharp', 'SSC', 'SSSS', 'SupReME']
+data_list = ['rkvik', 'escondido', 'aviris'] #['apex', 'aviris', 'crops', 'coast', 'coastal', 'mountain', 'rkvik', 'escondido', 'urban']
 
 # Objective function to evaluate
 def objective_func(method, train_params, types, mYim_2, mYim_6, Xm_im, metric, limsub=6,
@@ -594,6 +597,8 @@ def opt_method(method, parameters, max_evals, dataset='rkvik', datadir='./data/'
             par_space[key] = scope.int(hp.quniform(key, values[2][1], values[2][2], 1))
         elif values[2][0] is 'lognormal':
             par_space[key] = hp.lognormal(key, values[2][1], values[2][2])
+        elif values[2][0] is 'choice':
+            par_space[key] = hp.lognormal(key, values[2][1], values[2][2])
         else:
             par_space[key] = values[1]
 
@@ -661,7 +666,7 @@ def get_method(meth_name, meth_path_prefix='./', matlab_handle=matlab.engine.sta
     elif meth_name is 'MuSA':
         matlab_handle.addpath(meth_path_prefix + 'MusaCode')
         method = matlab_handle.MuSAwrap
-    elif meth_name is 'S2sharp':
+    elif meth_name is 'S2Sharp':
         matlab_handle.addpath(meth_path_prefix + meth_name)
         method = matlab_handle.S2sharpwrap
     elif meth_name is 'SSC':
@@ -677,7 +682,7 @@ def get_method(meth_name, meth_path_prefix='./', matlab_handle=matlab.engine.sta
         matlab_handle.addpath(meth_path_prefix + meth_name)
         method = matlab_handle.SupReMEwrap
 
-    matlab_meths = ['ATPRK', 'MuSA', 'S2sharp', 'SSSS', 'SupReME']
+    matlab_meths = ['ATPRK', 'MuSA', 'S2Sharp', 'SSSS', 'SupReME']
     if get_pars:
         pars = best_pars.get(get_pars, best_pars['default']).get(meth_name, {})
         if meth_name in matlab_meths:

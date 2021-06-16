@@ -43,11 +43,11 @@ def SSCwrap(Yim, d=[6,1,1,1,2,2,2,1,2,6,2,2], batch_size = 64, lr=0.0005, ndown=
                        Yim[10][:nl_t2,:nc_t2], 
                        Yim[11][:nl_t2,:nc_t2]]
         YimD = rr_s2_data(Yim_trimmed, trim=False)
-        XfD = np.moveaxis(np.array([Yim_D[i] for i,v in enumerate(d) if v == 1]),[0,1,2],[2,0,1])
-        XcD = np.moveaxis(np.array([Yim_D[i] for i,v in enumerate(d) if v == 2]),[0,1,2],[2,0,1])
+        XfD = np.moveaxis(np.array([YimD[i] for i,v in enumerate(d) if v == 1]),[0,1,2],[2,0,1])
+        XcD = np.moveaxis(np.array([YimD[i] for i,v in enumerate(d) if v == 2]),[0,1,2],[2,0,1])
 
         XcU=rescale(Xc, 2, order=0, anti_aliasing=False, preserve_range=True, multichannel=True)
-        XcDU=rescale(Xc_D, 2, order=0, anti_aliasing=False, preserve_range=True, multichannel=True)
+        XcDU=rescale(XcD, 2, order=0, anti_aliasing=False, preserve_range=True, multichannel=True)
         X=Xc[:nl_t2,:nc_t2,:]
 
     else:

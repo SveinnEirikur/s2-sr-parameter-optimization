@@ -4,9 +4,9 @@ Parameter optimization for Sentinel-2 supe-resolution methods
 
 Code to accompany:
 
-Armannsson, S.E.; Ulfarsson, M.O.; Sigurdsson, J.; Nguyen, H.V.; Sveinsson, J.R. A Comparison of Optimized Sentinel-2 Super-Resolution Methods Using Wald’s Protocol and Bayesian Optimization. Remote Sens. 2021, 13, 2192. https://doi.org/10.3390/rs13112192 
+Armannsson, S.E.; Ulfarsson, M.O.; Sigurdsson, J.; Nguyen, H.V.; Sveinsson, J.R. A Comparison of Optimized Sentinel-2 Super-Resolution Methods Using Wald’s Protocol and Bayesian Optimization. Remote Sens. 2021, 13, 2192. <https://doi.org/10.3390/rs13112192>
 
-Please reference the above paper if you use this code.
+Please reference the above paper if you use this code, available from <https://www.mdpi.com/2072-4292/13/11/2192>.
 
 ## Installation
 
