@@ -14,10 +14,10 @@ To use the code clone the repository to a suitable location and install the requ
 The code for S2Sharp and S2 SSC is included and wrapper functions are included for ATPRK, DSen2, MuSA, SSSS, and SupReME.
 To use the wrappers the appropriate code must be installed to the corresponding directories alongside the wrappers.
 
-ATPRK: <https://github.com/qunmingwang/Code-for-S2-fusion>
-DSen2: <https://github.com/lanha/DSen2>
-SSSS: <https://sites.google.com/view/chiahsianglin/software>
-SupReME: <https://github.com/lanha/SupReME>
+- ATPRK: <https://github.com/qunmingwang/Code-for-S2-fusion>
+- DSen2: <https://github.com/lanha/DSen2>
+- SSSS: <https://sites.google.com/view/chiahsianglin/software>
+- SupReME: <https://github.com/lanha/SupReME>
 
 Functions for loading and processing data and evaluating results are included in `mat_loaders.py`, `s2synt.py` and `sreval.py`.
 
