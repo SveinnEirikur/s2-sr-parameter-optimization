@@ -598,7 +598,7 @@ def opt_method(method, parameters, max_evals, dataset='rkvik', datadir='./data/'
         elif values[2][0] is 'lognormal':
             par_space[key] = hp.lognormal(key, values[2][1], values[2][2])
         elif values[2][0] is 'choice':
-            par_space[key] = hp.lognormal(key, values[2][1], values[2][2])
+            par_space[key] = hp.choice(key, [values[2][1], values[2][2]])
         else:
             par_space[key] = values[1]
 
