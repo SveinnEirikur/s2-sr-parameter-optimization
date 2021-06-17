@@ -41,4 +41,4 @@ tqdm==4.59.0
 ```
 
 The packages listed should be available using PyPI and/or Conda with the exception of the Matlab engine for Python which should be installed according to the instructions found on the Mathworks website <https://mathworks.com/help/matlab/matlab-engine-for-python.html>.
-The Matlab package is only needed to run Matlab code and `tensorflow` and `tensorflow_gpu` packages are only needed if using DSen2 and/or S2 SSC or other tensorflow based methods.
+The Matlab package is only needed to run Matlab code and `tensorflow` or `tensorflow-gpu` packages are only needed if using DSen2 and/or S2 SSC or other tensorflow based methods. Tensorflow versions greater than 2.0 should work but the current demo was tested with 2.4.1.
