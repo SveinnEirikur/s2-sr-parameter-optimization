@@ -24,18 +24,20 @@ Functions for loading and processing data and evaluating results are included in
 ### Requirements
 
 ```
-scipy==1.5.4
-scikit_image==0.17.2
-tqdm==4.51.0
-numpy==1.18.5
-matplotlib==3.3.3
+python==3.7
 h5py==2.10.0
-tensorflow_gpu==2.4.2
 hyperopt==0.2.5
-matlab==0.1
-pandas==1.2.4
-Pillow==8.2.0
-tensorflow==2.5.0
+jupyter==1.0.0
+matlabengineforpython==R2020a
+matplotlib==3.3.4
+numpy==1.19.5
+pandas==1.1.1
+pytables==3.6.1
+scikit-image==0.18.1
+scipy==1.5.2
+seaborn==0.11.1
+tensorflow-gpu==2.4.1
+tqdm==4.59.0
 ```
 
 The packages listed should be available using PyPI and/or Conda with the exception of the Matlab engine for Python which should be installed according to the instructions found on the Mathworks website <https://mathworks.com/help/matlab/matlab-engine-for-python.html>.
