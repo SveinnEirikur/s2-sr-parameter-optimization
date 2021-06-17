@@ -35,7 +35,7 @@ def rr_s2_data(Yim, ratio = 2,
                mtf = [ .32, .26, .28, .24, .38, .34, .34, .26, .33, .26, .22, .23],
                d = np.array([6, 1, 1, 1, 2, 2, 2, 1, 2, 6, 2, 2]), trim=True):
 
-    Yim_c = np.array(Yim)
+    Yim_c = np.array(Yim, dtype=object)
 
     idx1 = np.nonzero(np.array([1])[:, None] == d)[1]
     nl1,nc1 = Yim[idx1[0]].shape
@@ -94,7 +94,7 @@ def rr_s2_data(Yim, ratio = 2,
     return [np.squeeze(Yim_rr[key]) for key in Yim_rr.keys()]
     
 def mod_6_crop_s2_data(Yim, d = np.array([6, 1, 1, 1, 2, 2, 2, 1, 2, 6, 2, 2])):
-    Yim_c = np.array(Yim)
+    Yim_c = np.array(Yim, dtype=object)
 
     nl1,nc1 = Yim[d.tolist().index(1)].shape
     nl2,nc2 = Yim[d.tolist().index(2)].shape

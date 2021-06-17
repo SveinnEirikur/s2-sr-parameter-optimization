@@ -627,6 +627,7 @@ def opt_method(method, parameters, max_evals, dataset='rkvik', datadir='./data/'
                 trials=trials,
                 algo=tpe.suggest,
                 max_evals=max_evals,
+                return_argmin=False,
                 rstate=np.random.RandomState(seed))
 
     improvements = reduce(improvement_only, trials.losses(), [])
